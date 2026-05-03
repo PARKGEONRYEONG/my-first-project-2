@@ -6,7 +6,7 @@ const FADE_IN_UP = {
   initial: { opacity: 0, y: 40 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  transition: { duration: 0.8, ease: "easeOut" },
 };
 
 export default function Home() {
@@ -30,7 +30,10 @@ export default function Home() {
         <section className="px-6 py-20 md:py-40">
           <div className="max-w-screen-xl mx-auto">
             <motion.div
-              {...FADE_IN_UP}
+              initial={FADE_IN_UP.initial}
+              whileInView={FADE_IN_UP.whileInView}
+              viewport={FADE_IN_UP.viewport}
+              transition={FADE_IN_UP.transition}
               className="max-w-4xl"
             >
               <h1 className="text-5xl md:text-[80px] font-bold leading-[1.1] tracking-tight mb-12">
@@ -49,7 +52,10 @@ export default function Home() {
         <section id="about" className="px-6 py-32 bg-[#F9FAFB]">
           <div className="max-w-screen-xl mx-auto">
             <motion.div
-              {...FADE_IN_UP}
+              initial={FADE_IN_UP.initial}
+              whileInView={FADE_IN_UP.whileInView}
+              viewport={FADE_IN_UP.viewport}
+              transition={FADE_IN_UP.transition}
               className="mb-20 text-center md:text-left"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-6">나를 표현하는 키워드</h2>
@@ -59,9 +65,11 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-10">
               {/* Mango Card */}
               <motion.div
-                {...FADE_IN_UP}
+                initial={FADE_IN_UP.initial}
+                whileInView={FADE_IN_UP.whileInView}
+                viewport={FADE_IN_UP.viewport}
                 transition={{ ...FADE_IN_UP.transition, delay: 0.1 }}
-                className="group bg-white p-12 rounded-[40px] shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_30px_60px_rgb(0,0,0,0.06)] transition-all duration-700 ease-[0.16, 1, 0.3, 1] cursor-default border border-gray-50"
+                className="group bg-white p-12 rounded-[40px] shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_30px_60px_rgb(0,0,0,0.06)] transition-all duration-700 ease-out cursor-default border border-gray-50"
               >
                 <div className="w-20 h-20 bg-[#FFF9E6] rounded-3xl flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700">
                   <span className="text-4xl">🥭</span>
@@ -76,9 +84,11 @@ export default function Home() {
 
               {/* Happiness Card */}
               <motion.div
-                {...FADE_IN_UP}
+                initial={FADE_IN_UP.initial}
+                whileInView={FADE_IN_UP.whileInView}
+                viewport={FADE_IN_UP.viewport}
                 transition={{ ...FADE_IN_UP.transition, delay: 0.3 }}
-                className="group bg-white p-12 rounded-[40px] shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_30px_60px_rgb(0,0,0,0.06)] transition-all duration-700 ease-[0.16, 1, 0.3, 1] cursor-default border border-gray-50"
+                className="group bg-white p-12 rounded-[40px] shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_30px_60px_rgb(0,0,0,0.06)] transition-all duration-700 ease-out cursor-default border border-gray-50"
               >
                 <div className="w-20 h-20 bg-[#E6F0FF] rounded-3xl flex items-center justify-center mb-10 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-700">
                   <span className="text-4xl">😊</span>
@@ -97,7 +107,12 @@ export default function Home() {
         {/* Vision/Quote Section */}
         <section id="vision" className="px-6 py-40 bg-white">
           <div className="max-w-screen-xl mx-auto text-center">
-            <motion.div {...FADE_IN_UP}>
+            <motion.div
+              initial={FADE_IN_UP.initial}
+              whileInView={FADE_IN_UP.whileInView}
+              viewport={FADE_IN_UP.viewport}
+              transition={FADE_IN_UP.transition}
+            >
               <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-12">
                 "기술은 사람을 향해야 한다고 믿습니다."
               </h2>
