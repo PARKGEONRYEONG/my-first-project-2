@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -64,8 +65,21 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
                 className="group bg-white p-12 rounded-[40px] shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_30px_60px_rgb(0,0,0,0.06)] transition-all duration-700 ease-out cursor-default border border-gray-50"
               >
-                <div className="w-20 h-20 bg-[#FFF9E6] rounded-3xl flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700">
-                  <span className="text-4xl">🥭</span>
+                <div className="w-20 h-20 bg-[#FFF9E6] rounded-3xl flex items-center justify-center mb-10 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-700 overflow-hidden relative">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    className="w-full h-full relative"
+                  >
+                    <Image
+                      src="/mango.png"
+                      alt="Mango"
+                      fill
+                      className="object-cover p-2 rounded-3xl"
+                    />
+                  </motion.div>
                 </div>
                 <h3 className="text-3xl font-bold mb-6">망고 (Mango)</h3>
                 <p className="text-xl text-[#6B7684] leading-relaxed font-medium">
